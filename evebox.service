@@ -1,0 +1,13 @@
+[Unit]
+Description=EveBox Suricata Dashboard
+After=network.target suricata.service
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/bin/evebox server --host 0.0.0.0 --no-tls --datastore sqlite --data-directory /var/lib/evebox /var/log/suricata/eve.json
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

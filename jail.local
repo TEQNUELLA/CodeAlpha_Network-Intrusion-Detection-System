@@ -1,0 +1,9 @@
+[suricata]
+enabled = true
+filter = suricata
+logpath = /var/log/suricata/eve.json
+maxretry = 3
+bantime = 600
+ignoreip = 127.0.0.1/8 192.168.0.0/24
+action = iptables-allports[name=suricata]
+EOF'
